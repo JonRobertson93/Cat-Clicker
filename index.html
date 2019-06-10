@@ -3,14 +3,28 @@
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="responsive.css">
 </head>
 <body>
-	<ul id="animalList"> </ul>
-	<div id="main">
-		<h2 id="name"> </h2>
-		<div id="counter"> </div>
-		<img id="mainImage" src="" alt="Animal Image">
-	</div>
+	<h2> Heading 1 </h2>
+	<h2 id="bad"> Hello </h2>
+	<div id="container">
+		<ul id="animalList"> </ul>
+		<div id="main">
+			<h2 id="name"> </h2>
+			<div id="counter"> </div>
+			<img id="mainImage" src="" alt="Animal Image">
+		</div>
+		<div id="AdminView">
+			<button id="AdminButton"> <span class="colorized"> ADMIN TOOLS </span></button>
+			<form id="adminForm" class="displayNone">
+				Name: <input id="adminAnimalName" type="text" name="Name" value="TBD"><br>
+				Clicks: <input id="adminAnimalClicks" type="text" name="Clicks" value="TBD"><br>
+				<button type = "button" id="save"> SAVE </button>
+				<button type = "button" id="cancel"> CANCEL </button>
+				<button type = "button" id="clearClicks"> CLEAR CLICKS </button>
+			</form>
+		</div>
 	<script src="app.js"></script>
 </body>
 </html>
