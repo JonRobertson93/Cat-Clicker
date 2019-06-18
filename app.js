@@ -6,27 +6,27 @@ let model = {
 		{
 			name: "Squirtle",
 			clickCount: 0,
-			imgSrc: "img/squirtle.png",
+			imgSrc: "squirtle.png",
 		},
 		{
 			name: "Charmander",
 			clickCount: 0,
-			imgSrc: "img/charmander.png",
+			imgSrc: "charmander.png",
 		},
 		{
 			name: "Eevee",
 			clickCount: 0,
-			imgSrc: "img/eevee.png",
+			imgSrc: "eevee.png",
 		},
 		{
 			name: "Pikachu",
 			clickCount: 0,
-			imgSrc: "img/pikachu.png",
+			imgSrc: "pikachu.png",
 		},
 		{
 			name: "Piplup",
 			clickCount: 0,
-			imgSrc: "img/piplup.png",
+			imgSrc: "piplup.png",
 		},
 		
 	],	// End of animals array
@@ -90,6 +90,7 @@ let animalView = {
 	},
 };
 
+// Thumbnail list
 let animalListView = {
 	init: function () {
 		this.animalListEl = document.getElementById('animalList');
@@ -98,12 +99,14 @@ let animalListView = {
 	render: function () {
 		let animals = octopus.getAllAnimals();
 		this.animalListEl.innerHTML = '';
+		// initializing each animal thumbnail
 		for (let i=0; i<animals.length; i++) {
 			let animal = animals[i];
 			let el = document.createElement('li');
 			el.innerHTML = `<img src=${animal.imgSrc} alt="animal image">`;
 			el.addEventListener('click', (function (animalCopy) {
 				return function () {
+					// on click, thumbnail becomes currentAnimal via setCurrentAnimal octopus fuction, then render is called on animalView - main area
 					octopus.setCurrentAnimal(animalCopy);
 					animalView.render();
 				};
@@ -133,9 +136,8 @@ let adminView = {
 	show: function () {
 		adminView.init();
 		let adminDiv = document.getElementById('AdminView');
-		adminDiv.classList.add('adminShowPadding');
 		let adminTools = document.getElementById('adminForm');
-		adminTools.classList.remove('displayNone');
+		adminTools.classList.add('displayFlex');
 		let cancelButton = document.getElementById('cancel');
 		cancelButton.addEventListener('click', adminView.hide);
 		let saveButton = document.getElementById('save');
@@ -143,14 +145,15 @@ let adminView = {
 	},
 	hide: function () {
 		let adminTools = document.getElementById('adminForm');
-		adminTools.classList.add('displayNone');
+		adminTools.classList.remove('displayFlex');
 		let adminDiv = document.getElementById('AdminView');
-		adminDiv.classList.remove('adminShowPadding');
 	},
 	save: function () {
 		//UPDATE click counter with form data...
 		let clicks = document.getElementById('adminAnimalClicks');
+		let name = document.getElementById('adminAnimalName');
 		model.currentAnimal.clickCount = clicks.value;
+		model.currentAnimal.name = name.value;
 		animalView.render();
 		adminView.hide();
 	}
@@ -171,3 +174,29 @@ octopus.init();
 	d) Appends to animalList ul in HTML
 4. animalView.init() - adds event listener to main image - increases click count with each click
 */
+
+// NAVBAR DROPDOWN MENU
+// TODO - HAVE A DOWNWARD TRIANGLE TO INDICATE DROPDOWN. TURNS UP WHEN MENU ACTIVE - ADD IN FUNCTIONS BELOW
+let projects = document.getElementById('projects');
+let projDropdown = document.getElementById('projectsMenu');
+let dropArrow = document.getElementById('downArrow');
+
+projects.addEventListener('click', showDropdown);
+
+
+//Toggles between showing and hiding dropdown & changes caret up and down
+function showDropdown() {
+	projDropdown.classList.remove('hidden');
+	projects.removeEventListener('click', showDropdown);
+	projects.addEventListener('click', hideDropdown);
+	dropArrow.classList.remove('fa-caret-down');
+	dropArrow.classList.add('fa-caret-up');
+};
+
+function hideDropdown() {
+	projDropdown.classList.add('hidden');
+	projects.removeEventListener('click', hideDropdown);
+	projects.addEventListener('click', showDropdown);
+	dropArrow.classList.remove('fa-caret-up');
+	dropArrow.classList.add('fa-caret-down');
+};

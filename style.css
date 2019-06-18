@@ -1,8 +1,10 @@
+body {
+	font-family: Muli,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
+}
+
 #container {
 	display: flex;
 	flex-wrap: wrap;
-	color: white;
-	background-color: #78777d;
 	height: 800px;
 }
 
@@ -36,10 +38,10 @@
 }
 
 #AdminView {
-	width: 25%;
+	width: 20%;
 	padding: 10px;
-	padding-top: 500px;
 	margin: 10px;
+	margin-top: 40px;
 }
 
 #AdminButton {
@@ -52,35 +54,107 @@
 	margin: auto;
 }
 
+#adminForm button {
+	
+}
+
 .displayNone {
 	display: none;
 }
 
-.adminShowPadding {
-	padding-top: 400px!important;
+.displayFlex {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
 }
 
-input {
-	margin-bottom: 10px;
+#adminForm label {
+	width: 20%;
+}
+
+#adminForm input {
+	width: 67%;
+	margin-bottom: 1em;
 }
 
 button {
-	margin: .5em;
+	margin: 1em 0;
 }
 
-form {
-	text-align: center;
-}
-
-form button {
-	width: 25%;
-	font-size: 75%;
+button:hover,
+img:hover {
+	cursor: pointer;
 }
 
 .colorized span {
 	color: pink;
 }
 
-[bad] {
-	color: pink;
+/* NAVBAR CONTENTS */
+
+#navbar {
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    background: #223e48;
+    color: white;
+}
+
+h1 {
+	width: 80%;
+	margin-left: 1em;
+}
+
+#home, 
+#projects {
+	text-decoration: none;
+	color: inherit;
+}
+
+#home:hover,
+#projects:hover {
+	color: black;
+	cursor: pointer;
+}
+
+#projects {
+	margin-right: 1em;
+	list-style: none;
+    z-index: 999;
+    right: 0;
+    padding: 0.5em;
+}
+
+ul.dropdown {
+    display: none;
+    position: absolute;
+    z-index: 999;
+    right: 7px;
+    top: 2.8em;
+    color: white;
+    border: 1px solid white;
+    height: auto;
+    background: #223e48;
+    list-style-type: none;
+    padding: 0.5em;
+    line-height: 2em;
+}
+
+.dropdown li:hover {
+	color: black;
+	cursor: pointer;
+}
+
+.dropdown:hover,
+.dropdown:active {
+	display: block!important;
+}
+
+#projects:hover + .dropdown{
+    display: block; /* Display the dropdown */
+}
+
+.hidden {
+	display:none;
 }
