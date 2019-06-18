@@ -3,11 +3,23 @@
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" href="responsive.css">
+	<!-- <link rel="stylesheet" href="responsive.css"> -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 </head>
 <body>
-	<h2> Heading 1 </h2>
-	<h2 id="bad"> Hello </h2>
+	<!-- Same across all project pages -->
+	<nav id="navbar">
+		<h1> Animal Clicker </h1>
+		<a href="jonrobertson.tech" id="home"> Home </a>
+		<p id="projects"> Projects <i id="downArrow" class="fa fa-caret-down"></i></p>
+		<ul class="dropdown">
+			<li> Animal Clicker </li>
+			<li> Art Portfolio </li>
+			<li> Restroom Rater </li>
+			<li> Concentration Game </li>
+		</ul>
+	</nav>
+	</div>
 	<div id="container">
 		<ul id="animalList"> </ul>
 		<div id="main">
@@ -16,13 +28,13 @@
 			<img id="mainImage" src="" alt="Animal Image">
 		</div>
 		<div id="AdminView">
-			<button id="AdminButton"> <span class="colorized"> ADMIN TOOLS </span></button>
+			<button id="AdminButton"> <span class="colorized"> Admin Tools </span></button>
 			<form id="adminForm" class="displayNone">
-				Name: <input id="adminAnimalName" type="text" name="Name" value="TBD"><br>
-				Clicks: <input id="adminAnimalClicks" type="text" name="Clicks" value="TBD"><br>
-				<button type = "button" id="save"> SAVE </button>
-				<button type = "button" id="cancel"> CANCEL </button>
-				<button type = "button" id="clearClicks"> CLEAR CLICKS </button>
+				<label for="adminAnimalName"> Name </label> <input id="adminAnimalName" type="text" name="Name" value="TBD"><br>
+				<label for="adminAnaimalClicks"> Clicks </label> <input id="adminAnimalClicks" type="text" name="Clicks" value="TBD"><br>
+				<button type = "button" id="clearClicks"> Clear Clicks </button>
+				<button type = "button" id="save"> Save </button>
+				<button type = "button" id="cancel"> Cancel </button>
 			</form>
 		</div>
 	<script src="app.js"></script>
