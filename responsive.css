@@ -1,0 +1,67 @@
+
+@media screen and (max-width: 800px) {
+
+	h1 {
+		width: 55%;
+	}
+
+	/* Main content div */
+	#main img {
+		max-height: 67vw;
+	}
+
+	/* Thumbnail sidebar */
+	#animalList {
+		display: flex;
+		width: 100%;
+		order: 2;
+		justify-content: center;
+		align-items: center;
+		padding-left: 0;
+	}
+	#animalList li {
+		width: 18%;
+		margin: auto;
+   		text-align: center;
+	}
+	#animalList img {
+		max-width: 100%;
+		height: 18vw;
+		max-height: 120px;
+	}
+	#AdminView {
+		margin-top: 0;
+		order: 3;
+		width: 100%;
+		max-width: 250px;
+	}
+}
+
+@media screen and (min-width: 801px) and (max-width: 999px) {
+	h1 {
+		width: 62%;
+	}
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1200px) {
+	h1 {
+		width: 70%;
+	}
+}
+
+
+@media screen and (max-width: 600px) {
+	#navbar {
+		font-size: 2.2vh;
+	}
+
+	.dropdown {
+		font-size: 114%;
+	}
+}
+
+@media screen and (max-width: 460px) {
+	#navbar {
+		font-size: 1.9vh;
+	}
+}
